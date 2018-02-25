@@ -55,13 +55,22 @@
                 <table>
                   <tr>
                     <th><div style="padding: 10px 60px;"><h3>Mensaje: </h3></div></th>
-                    <td><input id="original" autofocus onchange="fromVigenere()" placeholder="MENSAJE" size="50"></td>
+                    <td><input id="original" autofocus onkeypress="fpressKey(event)" placeholder="MENSAJE" size="50"></td>
                   </tr>
                   <tr>
                     <th><div style="padding: 10px 60px;"><h3>Clave: </h3></div></th>
-                    <td><input id="Clave" placeholder="CLAVE (010001010100001)" size="50"></td>
+                    <td><input id="Clave" onkeypress="fpressKey(event)" placeholder="CLAVE (010001010100001)" size="50"></td>
                   </tr>
+                  <tr>
+                    <th></th>
+                    <td>
+                      <button class="boton2" onClick="clean()">BORRAR</button>
+                      <button class="boton2" onClick="fromVigenere()">Run</button>
+                    </td>
+                  </tr>
+
                 </table>
+                <span class="output1" id="error"></span>
               </div>
                 <div class="resultados">
                 <table>
@@ -88,15 +97,19 @@
                     <tr><th><h2>Ejemplo 1: </h2></th></tr>
                     <tr>
                       <th> Mensaje: </th>
-                      <td>QALM ARZASRS FQ IMBCQQALZIVDI</td>
+                      <td id = "m1">QALM ARZASRS FQ IMBCQQALZIVDI</td>
                     </tr>
                     <tr>
                       <th> Clave: </th>
-                      <td>MISION</td>
+                      <td id= "k1">MISION</td>
                     </tr>
                     <tr>
                       <th> Salida: </th>
-                      <td>ESTE MENSAJE SE AUTODESTRUIRA</td>
+                      <td id = "s1">ESTE MENSAJE SE AUTODESTRUIRA</td>
+                    </tr>
+                    <tr>
+                      <th></th>
+                      <td><button class="boton1" onClick="copia(1)"></button></td>
                     </tr>
                 </table>
                 </div>
