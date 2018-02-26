@@ -9,13 +9,17 @@
   <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
 
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
-  <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
-  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/animate.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="../../css/jquery.bxslider.css">
+  <link rel="stylesheet" type="text/css" href="../../css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../../css/animate.css">
+  <link rel="stylesheet" type="text/css" href="../../css/style.css">
+  <link rel="stylesheet" type="text/css" href="../../css/mystyle.css">
 
-  <script type="text/javascript" src="Vernam.js"></script>
+  <script type="text/javascript" src="js/Verify.js"></script>
+  <script type="text/javascript" src="js/global.js"></script>
+  <script type="text/javascript" src="js/Vigenere.js"></script>
+  <script type="text/javascript" src="js/herramientas.js"></script>
 </head>
 
 <body>
@@ -38,8 +42,8 @@
               </div>
               <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                  <li class="active"><a href="Vernam.html">Práctica 1</a></li>
-                  <li class=""><a href="Vigenere.html">Práctica 2</a></li>
+                  <li class=""><a href="practicas/1-Vernam/Vernam.html">Práctica 1</a></li>
+                  <li class="active"><a href="practicas/2-Vigenere/Vigenere.html">Práctica 2</a></li>
                 </ul>
               </div>
             </div>
@@ -50,18 +54,27 @@
           <div class="container">
             <div class="row">
               <div class="banner-info text-center wow fadeIn delay-05s">
-                <h1>CIFRADO VERNAM</h1>
+                <h1>DESCIFRADO VIGENERE</h1>
                 <div class="introdatos">
                 <table>
                   <tr>
-                    <th><div style="padding: 10px 60px;"><h3>Mensaje Binario:</h3></div></th>
-                    <td><input id="original" autofocus onchange="binVernam()" placeholder="BINARIO" size="50"></td>
+                    <th><div style="padding: 10px 60px;"><h3>Mensaje: </h3></div></th>
+                    <td><input id="original" autofocus onkeypress="fpressKey(event)" placeholder="MENSAJE" size="50"></td>
                   </tr>
                   <tr>
                     <th><div style="padding: 10px 60px;"><h3>Clave: </h3></div></th>
-                    <td><input id="Clave" placeholder="CLAVE (010001010100001)" size="50"></td>
+                    <td><input id="Clave" onkeypress="fpressKey(event)" placeholder="CLAVE (010001010100001)" size="50"></td>
                   </tr>
+                  <tr>
+                    <th></th>
+                    <td>
+                      <button class="boton2" onClick="clean()">BORRAR</button>
+                      <button class="boton2" onClick="fromVigenere()">Run</button>
+                    </td>
+                  </tr>
+
                 </table>
+                <span class="output1" id="error"></span>
               </div>
                 <div class="resultados">
                 <table>
@@ -72,79 +85,35 @@
                     <td><span class="output" id="intro"></span></td>
                   </tr>
                   <tr>
-                    <th>Mensaje Binario:</th>
-                    <td><span class="output" id="introbin"></span></td>
-
-                  </tr>
-                  <tr>
                     <th>Clave:</th>
                     <td><span class="output" id="clave"></span></td>
-                  </tr>
-                  <tr>
-                    <th>Salida binario:</th>
-                    <td><span class="output" id="salidabin"></span></td>
                   </tr>
                   <tr>
                     <th>Salida:</th>
                     <td><span class="output" id="salida"></span></td>
                   </tr>
-                  <tr>
-                    <th>Carácteres no imprimibles:</th>
-                    <td><span class="output" id="noimp"></span></td>
-                  </tr>
-
 
                 </table>
                 </div>
-                <a href="Vernam.html" class="mybtn">Mensaje Normal</a>
+                <a href="Vigenere.html" class="mybtn">CIFRADOR</a>
                 <div class="resultados">
                   <table>
                     <tr><th><h2>Ejemplo 1: </h2></th></tr>
                     <tr>
                       <th> Mensaje: </th>
-                      <td>SOL</td>
-                    </tr>
-                    <tr>
-                      <th> Mensaje Binario: </th>
-                      <td>101001110011111001100 </td>
+                      <td id = "m1">QALM ARZASRS FQ IMBCQQALZIVDI</td>
                     </tr>
                     <tr>
                       <th> Clave: </th>
-                      <td>011110000110001110011 </td>
-                    </tr>
-                    <tr>
-                      <th> Salida Binario: </th>
-                      <td>110111110101110111111</td>
+                      <td id= "k1">MISION</td>
                     </tr>
                     <tr>
                       <th> Salida: </th>
-                      <td>oW?</td>
-                    </tr>
-                </table>
-                </div>
-
-                <div class="resultados">
-                  <table>
-                    <tr><th><h2>Ejemplo 2: </h2></th></tr>
-                    <tr>
-                      <th> Mensaje: </th>
-                      <td>[t</td>
+                      <td id = "s1">ESTE MENSAJE SE AUTODESTRUIRA</td>
                     </tr>
                     <tr>
-                      <th> Mensaje Binario: </th>
-                      <td>10110111110100 </td>
-                    </tr>
-                    <tr>
-                      <th> Clave: </th>
-                      <td>00011110100001 </td>
-                    </tr>
-                    <tr>
-                      <th> Salida Binario: </th>
-                      <td>10101001010101</td>
-                    </tr>
-                    <tr>
-                      <th> Salida: </th>
-                      <td>TU</td>
+                      <th></th>
+                      <td><button class="boton1" onClick="copia(1)"></button></td>
                     </tr>
                 </table>
                 </div>
@@ -158,13 +127,12 @@
     </div>
 
   </div>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery.easing.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/wow.js"></script>
-  <script src="js/jquery.bxslider.min.js"></script>
-  <script src="js/custom.js"></script>
-  <script src="contactform/contactform.js"></script>
+  <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/jquery.easing.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <script src="../../js/wow.js"></script>
+  <script src="../../js/jquery.bxslider.min.js"></script>
+  <script src="../../js/custom.js"></script>
 
 </body>
 </html>
