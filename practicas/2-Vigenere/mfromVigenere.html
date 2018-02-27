@@ -20,7 +20,6 @@
   <script type="text/javascript" src="js/global.js"></script>
   <script type="text/javascript" src="js/Vigenere.js"></script>
   <script type="text/javascript" src="js/herramientas.js"></script>
-
 </head>
 
 <body>
@@ -43,8 +42,8 @@
               </div>
               <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                  <li class=""><a href="../1-Vernam/Vernam.html">Práctica 1</a></li>
-                  <li class="active"><a href="Vigenere.html">Práctica 2</a></li>
+                  <li class=""><a href="practicas/1-Vernam/Vernam.html">Práctica 1</a></li>
+                  <li class="active"><a href="practicas/2-Vigenere/Vigenere.html">Práctica 2</a></li>
                 </ul>
               </div>
             </div>
@@ -55,7 +54,7 @@
           <div class="container">
             <div class="row">
               <div class="banner-info text-center wow fadeIn delay-05s">
-                <h1>CIFRADO VIGENERE</h1>
+                <h1>DESCIFRADO VIGENERE MODIFICACIÓN</h1>
                 <div class="introdatos">
                 <table>
                   <tr>
@@ -73,10 +72,10 @@
                       <button class="boton2" onClick="Vigenere()">Run</button>
                     </td>
                   </tr>
+
                 </table>
                 <span class="output1" id="error"></span>
               </div>
-
                 <div class="resultados">
                 <table>
 
@@ -96,32 +95,28 @@
 
                 </table>
                 </div>
-                <a href="fromVigenere.html" class="mybtn">DESCIFRADOR</a>
-                <a href="mVigenere.html" class="mybtn">Modificación</a>
-                <div class="resultados" id = "resultado">
+                <a href="Vigenere.html" class="mybtn">CIFRADOR</a>
+                <div class="resultados">
                   <table>
                     <tr><th><h2>Ejemplo 1: </h2></th></tr>
                     <tr>
                       <th> Mensaje: </th>
-                      <td id = "m1">ESTE MENSAJE SE AUTODESTRUIRA</td>
+                      <td id = "m1">QALM ARZASRS FQ IMBCQQALZIVDI</td>
                     </tr>
                     <tr>
                       <th> Clave: </th>
                       <td id= "k1">MISION</td>
                     </tr>
-
+                    <tr>
                       <th> Salida: </th>
-                      <td id = "s1">QALM ARZASRS FQ IMBCQQALZIVDI</td>
+                      <td id = "s1">ESTE MENSAJE SE AUTODESTRUIRA</td>
                     </tr>
                     <tr>
                       <th></th>
                       <td><button class="boton1" onClick="copia(1)"></button></td>
                     </tr>
                 </table>
-                <table>
-                </table>
                 </div>
-
 
               </div>
             </div>
@@ -138,7 +133,6 @@
   <script src="../../js/wow.js"></script>
   <script src="../../js/jquery.bxslider.min.js"></script>
   <script src="../../js/custom.js"></script>
-
 
 </body>
 </html>

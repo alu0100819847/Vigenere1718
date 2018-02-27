@@ -25,12 +25,13 @@ function Vigenere(){
   }
 }
 
+
 function crypt(str, key){
-  console.log("str + key: "+str+" + "+key)
-  console.log("str + key: "+num[str]+" + "+num[key]);
+  //console.log("str + key: "+str+" + "+key)
+  //console.log("str + key: "+num[str]+" + "+num[key]);
   var sol = (num[str] + num[key])%26;
-  console.log(sol);
-  console.log("sol: "+num[sol]);
+  //console.log(sol);
+  //console.log("sol: "+num[sol]);
   return num[sol];
 }
 
@@ -61,10 +62,10 @@ function fromVigenere(){
 
 function decrypt(str, key){
   var sol = (num[str]-num[key])%26;
-  console.log("str - key: "+str+" - "+key)
-  console.log("str - key: "+num[str]+" - "+num[key]);
+  //console.log("str - key: "+str+" - "+key)
+  //console.log("str - key: "+num[str]+" - "+num[key]);
   if(sol < 0) sol = sol + 26;
-  console.log(sol);
-  console.log(num[sol]);
+  //console.log(sol);
+  //console.log(num[sol]);
   return num[sol];
 }

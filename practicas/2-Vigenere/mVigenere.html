@@ -55,22 +55,22 @@
           <div class="container">
             <div class="row">
               <div class="banner-info text-center wow fadeIn delay-05s">
-                <h1>CIFRADO VIGENERE</h1>
+                <h1>CIFRADO VIGENERE MODIFICACIÓN</h1>
                 <div class="introdatos">
                 <table>
                   <tr>
                     <th><div style="padding: 10px 60px;"><h3>Mensaje: </h3></div></th>
-                    <td><input id="original" autofocus onkeypress="tpressKey(event)" placeholder="MENSAJE" size="40"></td>
+                    <td><input id="original" autofocus onkeypress="fpressKey(event)" placeholder="MENSAJE" size="40"></td>
                   </tr>
                   <tr>
                     <th><div style="padding: 10px 60px;"><h3>Clave: </h3></div></th>
-                    <td><input id="Clave" onkeypress="tpressKey(event)" placeholder="CLAVE" size="40"></td>
+                    <td><input id="Clave" onkeypress="fpressKey(event)" placeholder="CLAVE" size="40"></td>
                   </tr>
                   <tr>
                     <th></th>
                     <td>
                       <button class="boton2" onClick="clean()">BORRAR</button>
-                      <button class="boton2" onClick="Vigenere()">Run</button>
+                      <button class="boton2" onClick="fromVigenere()">Run</button>
                     </td>
                   </tr>
                 </table>
@@ -96,22 +96,22 @@
 
                 </table>
                 </div>
-                <a href="fromVigenere.html" class="mybtn">DESCIFRADOR</a>
-                <a href="mVigenere.html" class="mybtn">Modificación</a>
+                <a href="mfromVigenere.html" class="mybtn">DESCIFRADOR</a>
+                <a href="Vigenere.html" class="mybtn">Original</a>
                 <div class="resultados" id = "resultado">
                   <table>
                     <tr><th><h2>Ejemplo 1: </h2></th></tr>
                     <tr>
                       <th> Mensaje: </th>
-                      <td id = "m1">ESTE MENSAJE SE AUTODESTRUIRA</td>
+                      <td id = "m1">EL FUEGO INVISIBLE</td>
                     </tr>
                     <tr>
                       <th> Clave: </th>
-                      <td id= "k1">MISION</td>
+                      <td id= "k1">PLANETA</td>
                     </tr>
 
                       <th> Salida: </th>
-                      <td id = "s1">QALM ARZASRS FQ IMBCQQALZIVDI</td>
+                      <td id = "s1">PA FHANO TCVVOPBWT</td>
                     </tr>
                     <tr>
                       <th></th>
